@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "displayName": "Speedy Localization",
   "description": "A bunch of localization extensions",
-  "author": 
-  {
+  "author": {
     "name": "Speedy345"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "DynamicVarSet Extension",
+      "description": "Contains an example on how to short-hand commonly used variables",
+      "path": "Samples~/VarSetExtensions"
+    }
+  ]
 }
