@@ -18,6 +18,8 @@ namespace SpeedyLocalization
         }
         public virtual void ModifyValue(float addend) => BaseValue += addend;
 
+        public int IntValue => Mathf.RoundToInt(BaseValue);
+
         public object GetSourceValue(ISelectorInfo selector) => ReadValue;
 
         public virtual object ReadValue => BaseValue;
