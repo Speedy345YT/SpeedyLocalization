@@ -1,0 +1,10 @@
+{
+  "name": "com.speedy345.localization",
+  "version": "1.0.0",
+  "displayName": "Speedy Localization",
+  "description": "A bunch of localization extensions",
+  "author": 
+  {
+    "name": "Speedy345"
+  }
+}
