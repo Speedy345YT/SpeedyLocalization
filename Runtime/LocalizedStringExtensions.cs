@@ -23,9 +23,9 @@ namespace SpeedyLocalization
             return string.Concat(input.Select((x, i) => (i > 0 && char.IsUpper(x) && (char.IsLower(input[i - 1]) || char.IsLower(input[i + 1])))
                 ? "_" + x.ToString() : x.ToString())).ToLower();
         }
-        public static LocalizedString LocalizedName(this Enum type) => new LocalizedString("Items", $"item.{nameof(type).ToSnakeCase()}.{type.ToString().ToSnakeCase()}.title"); //Turns DamageType.Generic into item.damage_type.generic.title
-        public static LocalizedString LocalizedDescription(this Enum type) => new LocalizedString("Items", $"item.{nameof(type).ToSnakeCase()}.{type.ToString().ToSnakeCase()}.description");
-        public static LocalizedString LocalizedSmartDescription(this Enum type, DynamicVarSet set) => new LocalizedString("Items", $"item.{nameof(type).ToSnakeCase()}.{type.ToString().ToSnakeCase()}.smartDescription").WithVars(set);
+        public static LocalizedString LocalizedName(this Enum type) => new LocalizedString("Items", $"item.{type.GetType().Name.ToSnakeCase()}.{type.ToString().ToSnakeCase()}.title"); //Turns DamageType.Generic into item.damage_type.generic.title
+        public static LocalizedString LocalizedDescription(this Enum type) => new LocalizedString("Items", $"item.{type.GetType().Name.ToSnakeCase()}.{type.ToString().ToSnakeCase()}.description");
+        public static LocalizedString LocalizedSmartDescription(this Enum type, DynamicVarSet set) => new LocalizedString("Items", $"item.{type.GetType().Name.ToSnakeCase()}.{type.ToString().ToSnakeCase()}.smartDescription").WithVars(set);
         public static float PercentLess(this float value) => Math.Abs(1f - value) * 100f;
         public static float Percent(this float value) => value * 100f;
         public static float PercentMore(this float value) => Math.Abs(value - 1f) * 100f;
