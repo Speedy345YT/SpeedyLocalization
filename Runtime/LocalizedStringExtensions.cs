@@ -17,7 +17,12 @@ namespace SpeedyLocalization
             }
             return locString;
         }
-        public static LocalizedString WithVars(this LocalizedString locString, DynamicVarSet vars) => locString.WithVars(vars.Values);
+        public static LocalizedString WithVars(this LocalizedString locString, DynamicVarSet vars)
+        {
+            if (vars == null) return locString;
+
+            return locString.WithVars(vars.Values)
+        }
         public static string ToSnakeCase(this string input)
         {
             return string.Concat(input.Select((x, i) => (i > 0 && char.IsUpper(x) && (char.IsLower(input[i - 1]) || char.IsLower(input[i + 1])))
