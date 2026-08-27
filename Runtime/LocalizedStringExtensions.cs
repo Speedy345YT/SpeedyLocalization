@@ -21,7 +21,7 @@ namespace SpeedyLocalization
         {
             if (vars == null) return locString;
 
-            return locString.WithVars(vars.Values)
+            return locString.WithVars(vars.Values);
         }
         public static string ToSnakeCase(this string input)
         {
