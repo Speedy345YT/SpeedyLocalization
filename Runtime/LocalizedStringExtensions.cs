@@ -18,7 +18,7 @@ namespace SpeedyLocalization
             }
             return locString;
         }
-        public static LocalizedString Add(this LocalizedString locString, string key, object value)
+        public static LocalizedString AddObj(this LocalizedString locString, string key, object value)
         {
             var obj = new ExpandoObject();
             obj.TryAdd(key, value);
