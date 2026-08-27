@@ -1,9 +1,8 @@
+using UnityEngine;
 using System;
 using System.Linq;
 using UnityEngine.Localization;
 using System.Collections.Generic;
-using UnityEngine.Localization.SmartFormat.PersistentVariables;
-using System.Dynamic;
 
 namespace SpeedyLocalization
 {
@@ -18,16 +17,7 @@ namespace SpeedyLocalization
             }
             return locString;
         }
-        public static LocalizedString AddObj(this LocalizedString locString, string key, object value)
-        {
-            var obj = new ExpandoObject();
-            obj.TryAdd(key, value);
-
-            locString.Arguments.Add(obj);
-            return locString;
-        }
         public static LocalizedString WithVars(this LocalizedString locString, DynamicVarSet vars) => locString.WithVars(vars.Values);
-        public static LocalizedString WithVars(this LocalizedString locString, DynamicVar var) => locString.WithVars(new [] { var });
         public static string ToSnakeCase(this string input)
         {
             return string.Concat(input.Select((x, i) => (i > 0 && char.IsUpper(x) && (char.IsLower(input[i - 1]) || char.IsLower(input[i + 1])))
